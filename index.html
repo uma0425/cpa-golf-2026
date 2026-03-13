@@ -10,49 +10,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Sora:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  /* 太平洋クラブ市原のコースから
-     ─ 洋芝エバーグリーン、池の深い水面、レンガのクラブハウス、房総の自然林 */
-  --bg: #F4F1EA;
-  --bg-warm: #EDE8DC;
-  --fg: #1B2E1E;
-  --fg-dim: #4A5A4D;
-  --fg-faint: #8F9A87;
-  --rule: #CDD4C5;
-
-  /* 太平洋グリーン */
-  --green-deep: #1B2E1E;
-  --green-dark: #243826;
-  --green-mid: #2F4A32;
-  --green-rich: #3A5C3D;
-  --green-light: #5A7E56;
-  --green-pale: rgba(58,92,61,0.08);
-  --green-on: #C8DABB;
-  --green-on-dim: rgba(200,218,187,0.45);
-
-  --brick: #8B6B4A;
-  --gold-muted: #B8976E;
-
-  --display: 'Instrument Serif', serif;
-  --jp: 'Shippori Mincho B1', serif;
-  --body: 'Sora', sans-serif;
+  --bg: #F4F1EA;--bg-warm: #EDE8DC;--fg: #1B2E1E;--fg-dim: #4A5A4D;--fg-faint: #8F9A87;--rule: #CDD4C5;
+  --green-deep: #1B2E1E;--green-dark: #243826;--green-mid: #2F4A32;--green-rich: #3A5C3D;--green-light: #5A7E56;--green-pale: rgba(58,92,61,0.08);--green-on: #C8DABB;--green-on-dim: rgba(200,218,187,0.45);
+  --brick: #8B6B4A;--gold-muted: #B8976E;
+  --display: 'Instrument Serif', serif;--jp: 'Shippori Mincho B1', serif;--body: 'Sora', sans-serif;
   --page: min(680px, 100vw - 3rem);
 }
-
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--body);background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit}button{border:none;background:none;cursor:pointer;font-family:inherit}
 img{max-width:100%;display:block}
 .page{width:var(--page);margin:0 auto}
-
-/* ═══ NAV ═══ */
 .site-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 1.5rem;height:48px;display:flex;align-items:center;justify-content:space-between;background:rgba(27,46,30,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(200,218,187,0.1);transition:transform .4s ease}
 .site-nav.hidden{transform:translateY(-100%)}
 .nav-logo{font-family:var(--display);font-size:0.85rem;color:var(--green-on)}
 .nav-contact{font-family:var(--body);font-size:0.68rem;font-weight:500;letter-spacing:.08em;color:var(--green-on);text-decoration:none;border:1px solid rgba(200,218,187,0.3);padding:6px 14px;border-radius:2px;transition:all .3s ease}
 .nav-contact:active{background:var(--green-on);color:var(--green-deep)}
-
-/* ═══ HERO ═══ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 .hero-img{position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=1400&q=80&auto=format&fit=crop') center/cover no-repeat;background-color:var(--green-dark)}
 .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,46,30,0.2) 0%,rgba(27,46,30,0.15) 30%,rgba(27,46,30,0.8) 100%),linear-gradient(270deg,transparent 50%,rgba(27,46,30,0.25) 100%)}
@@ -67,19 +41,14 @@ img{max-width:100%;display:block}
 .hero-meta-value a{color:rgba(255,255,255,0.9);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(255,255,255,0.2);transition:text-decoration-color .3s ease}
 .hero-meta-value a:hover{text-decoration-color:rgba(255,255,255,0.7)}
 @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-
-/* ═══ SECTION HEADERS ═══ */
 .sh{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem}
 .sh-num{font-family:var(--display);font-style:italic;font-size:3.5rem;line-height:1;color:var(--green-rich);opacity:0.2;flex-shrink:0}
 .sh-text{display:flex;flex-direction:column;gap:2px}
 .sh-en{font-family:var(--display);font-style:italic;font-size:0.82rem;color:var(--fg-dim);letter-spacing:0.02em}
 .sh-jp{font-family:var(--jp);font-weight:700;font-size:1.3rem;color:var(--fg);letter-spacing:0.06em}
-/* dark variant */
 .sh-dark .sh-num{color:var(--green-on);opacity:0.15}
 .sh-dark .sh-en{color:var(--green-on-dim)}
 .sh-dark .sh-jp{color:var(--green-on)}
-
-/* ═══ OVERVIEW ═══ */
 .ov-row{display:grid;grid-template-columns:7rem 1fr;gap:0;padding:1.2rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
 .ov-row:first-child{border-top:1px solid var(--rule)}
 .ov-label{font-family:var(--body);font-weight:300;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--fg-faint);padding-top:2px}
@@ -87,7 +56,6 @@ img{max-width:100%;display:block}
 .ov-value small{display:block;font-family:var(--body);font-weight:300;font-size:0.75rem;color:var(--fg-dim);margin-top:2px}
 .ov-value a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule);transition:text-decoration-color .3s ease}
 .ov-value a:hover{text-decoration-color:var(--green-rich)}
-
 .venue-link{display:block;margin-top:2rem;padding:1.5rem 0;border-top:2px solid var(--green-deep);border-bottom:2px solid var(--green-deep);text-decoration:none;transition:all .3s ease}
 .venue-link:active{opacity:0.7}
 .venue-link-inner{display:flex;justify-content:space-between;align-items:center}
@@ -95,17 +63,12 @@ img{max-width:100%;display:block}
 .venue-link-sub{font-family:var(--body);font-weight:300;font-size:0.72rem;color:var(--fg-dim);margin-top:3px}
 .venue-link-arrow{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--green-rich);transition:transform .3s ease}
 .venue-link:hover .venue-link-arrow{transform:translateX(4px)}
-
-/* ═══ PHOTO BREAK ═══ */
 .photo-break{position:relative;width:100%;overflow:hidden}
 .photo-break img{width:100%;height:260px;object-fit:cover;display:block}
 .photo-break-caption{position:absolute;bottom:0;left:0;right:0;padding:16px 1.5rem 14px;background:linear-gradient(to top,rgba(27,46,30,0.75),transparent);font-family:var(--display);font-style:italic;font-size:0.72rem;color:rgba(200,218,187,0.5);letter-spacing:0.04em}
 @media(min-width:768px){.photo-break img{height:380px}}
-
-/* ═══ GREEN SECTIONS (Schedule, Rules header) ═══ */
 .section-green{background:var(--green-deep);color:var(--green-on);padding:0 1.5rem}
 .section-green .page-inner{width:var(--page);margin:0 auto}
-
 .sched-item{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid rgba(200,218,187,0.1);align-items:start}
 .sched-item:first-child{border-top:1px solid rgba(200,218,187,0.1)}
 .sched-time{font-family:var(--display);font-size:1.8rem;line-height:1;color:var(--gold-muted);letter-spacing:-0.02em;padding-top:2px}
@@ -113,44 +76,45 @@ img{max-width:100%;display:block}
 .sched-body{padding-top:4px}
 .sched-title{font-family:var(--jp);font-weight:600;font-size:0.95rem;color:var(--green-on);margin-bottom:3px;letter-spacing:0.03em}
 .sched-desc{font-family:var(--body);font-weight:300;font-size:0.78rem;color:var(--green-on-dim);line-height:1.65}
-
-/* ═══ QUOTE ═══ */
 .quote-section{background:var(--green-dark);padding:3.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
 .quote-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 70%,rgba(58,92,61,0.25),transparent 60%),radial-gradient(ellipse 60% 50% at 80% 20%,rgba(139,107,74,0.06),transparent 50%);pointer-events:none}
 .quote-section blockquote{position:relative;font-family:var(--jp);font-weight:400;font-size:clamp(0.88rem,2.5vw,1.05rem);color:var(--green-on-dim);line-height:2;letter-spacing:0.06em;max-width:520px;margin:0 auto 1rem}
 .quote-section cite{position:relative;font-family:var(--display);font-style:italic;font-size:0.75rem;color:rgba(200,218,187,0.25);letter-spacing:0.06em}
-
-/* ═══ RULES ═══ */
 .rules-section{margin-bottom:2.5rem}
 .rules-section:last-child{margin-bottom:0}
 .rs-title{font-family:var(--display);font-style:italic;font-size:0.88rem;color:var(--brick);margin-bottom:0.8rem;letter-spacing:0.02em}
 .rs-item{font-family:var(--jp);font-weight:400;font-size:0.88rem;color:var(--fg);line-height:1.8;letter-spacing:0.02em;padding-left:1em;text-indent:-1em;margin-bottom:0.4rem}
 .rs-item::before{content:'─';color:var(--fg-faint);margin-right:0.5em}
 .rs-item strong{font-weight:600;color:var(--green-mid)}
-
 .holes-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:1.5rem;border:1px solid var(--rule)}
 .hole-cell{background:var(--bg);padding:1rem 1.2rem}
 .hole-cell-type{font-family:var(--body);font-weight:300;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--fg-faint);margin-bottom:4px}
 .hole-cell-val{font-family:var(--jp);font-weight:500;font-size:0.85rem;color:var(--fg)}
+.example-box{margin-top:1.2rem;padding:1.2rem 1.4rem;background:var(--green-pale);border-left:3px solid var(--green-rich);border-radius:0 4px 4px 0}
+.example-box-title{font-family:var(--body);font-weight:500;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green-rich);margin-bottom:0.6rem}
+.example-box p{font-family:var(--jp);font-weight:400;font-size:0.82rem;color:var(--fg-dim);line-height:1.8}
+.example-box .score-line{display:flex;gap:1rem;flex-wrap:wrap;margin:0.4rem 0}
+.example-box .score-tag{font-family:var(--body);font-weight:400;font-size:0.75rem;color:var(--fg-dim)}
+.example-box .result{font-family:var(--jp);font-weight:600;font-size:0.88rem;color:var(--green-mid);margin-top:0.5rem}
+.note-box{margin-top:1rem;padding:1rem 1.4rem;background:rgba(184,151,110,0.08);border-left:3px solid var(--gold-muted);border-radius:0 4px 4px 0}
+.note-box p{font-family:var(--jp);font-weight:400;font-size:0.82rem;color:var(--fg-dim);line-height:1.8}
 
-/* ═══ PAIRINGS ═══ */
+/* Pairings */
 .pairings-intro{background:var(--green-mid);padding:3rem 1.5rem 2rem}
 .pairings-intro .page-inner{width:var(--page);margin:0 auto}
-.pairings-body{padding:0 1.5rem}
-.pairings-body .page-inner{width:var(--page);margin:0 auto}
+.pairings-body{background:var(--bg);padding:0 1.5rem}
+.pairings-body .page-inner{width:var(--page);margin:0 auto;padding:2rem 0 1rem}
 
-.pairings-tabs{display:flex;gap:0;margin-bottom:2rem;border-bottom:2px solid var(--fg)}
-.p-tab{padding:0.6rem 0;margin-right:2rem;font-family:var(--body);font-weight:400;font-size:0.78rem;letter-spacing:0.1em;color:var(--fg-dim);position:relative;-webkit-tap-highlight-color:transparent;transition:color .3s ease}
-.p-tab::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--green-rich);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
-.p-tab.active{color:var(--fg);font-weight:500}
-.p-tab.active::after{transform:scaleX(1)}
-.p-panel{display:none}.p-panel.active{display:block}
+.course-divider{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;margin-top:0.5rem}
+.course-divider-label{font-family:var(--display);font-weight:400;font-size:1.1rem;letter-spacing:0.15em;color:var(--green-rich);flex-shrink:0}
+.course-divider-line{flex:1;height:1px;background:var(--rule)}
 
-.group-block{margin-bottom:3rem}
+.group-block{margin-bottom:2.5rem}
 .group-block:last-child{margin-bottom:0}
 .gb-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:1rem;padding-bottom:0.6rem;border-bottom:1px solid var(--rule)}
 .gb-time{font-family:var(--display);font-size:2rem;line-height:1;color:var(--green-rich);letter-spacing:-0.02em}
 .gb-label{font-family:var(--body);font-weight:300;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-faint)}
+.gb-team-tag{font-family:var(--body);font-weight:400;font-size:0.55rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-muted);border:1px solid rgba(184,151,110,0.4);padding:1px 6px;border-radius:1px;flex-shrink:0;margin-left:auto}
 .gb-player{display:flex;align-items:baseline;gap:0.8rem;padding:0.7rem 0;border-bottom:1px solid rgba(205,212,197,0.5)}
 .gb-player:last-child{border-bottom:none}
 .gb-player-num{font-family:var(--display);font-style:italic;font-size:1rem;color:var(--fg-faint);width:1.5rem;text-align:right;flex-shrink:0}
@@ -159,10 +123,8 @@ img{max-width:100%;display:block}
 .gb-player-year{font-family:var(--display);font-style:italic;font-size:0.72rem;color:var(--fg-faint);flex-shrink:0}
 .gb-player-leader{font-family:var(--body);font-weight:500;font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--green-rich);border:1px solid var(--green-rich);padding:1px 6px;border-radius:1px;flex-shrink:0}
 
-/* ═══ CONTACT (dark green) ═══ */
 .section-contact{background:var(--green-deep);padding:0 1.5rem;color:var(--green-on)}
 .section-contact .page-inner{width:var(--page);margin:0 auto}
-
 .cb-role{font-family:var(--body);font-weight:300;font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--green-on-dim);margin-bottom:0.5rem}
 .cb-name{font-family:var(--jp);font-weight:700;font-size:1.3rem;color:var(--green-on);margin-bottom:0.2rem}
 .cb-company{font-family:var(--body);font-weight:300;font-size:0.78rem;color:var(--green-on-dim);margin-bottom:1.5rem}
@@ -171,20 +133,12 @@ img{max-width:100%;display:block}
 .cb-link-label{font-family:var(--body);font-weight:300;font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--green-on-dim)}
 .cb-link-value{font-family:var(--body);font-weight:400;font-size:0.88rem;color:var(--green-on);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(200,218,187,0.2);transition:text-decoration-color .3s ease}
 .cb-link:hover .cb-link-value{text-decoration-color:var(--green-on)}
-
-/* ═══ FOOTER ═══ */
 .footer{background:var(--green-deep);padding:2rem 1.5rem 3rem;text-align:center;border-top:1px solid rgba(200,218,187,0.08)}
 .footer p{font-family:var(--display);font-style:italic;font-size:0.72rem;color:rgba(200,218,187,0.2);letter-spacing:0.06em}
-
 .spacer-s{height:2rem}.spacer-m{height:4rem}.spacer-l{height:6rem}
-.deco-line{width:1px;height:60px;background:var(--rule);margin:0 auto}
 .deco-line-dark{width:1px;height:60px;background:rgba(200,218,187,0.12);margin:0 auto}
-
-/* ═══ REVEAL ═══ */
 .r{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
 .r.v{opacity:1;transform:translateY(0)}
-
-/* ═══ RESPONSIVE ═══ */
 @media(max-width:520px){
   .ov-row{grid-template-columns:1fr;gap:2px}
   .gb-player{flex-wrap:wrap;gap:0.3rem 0.8rem}
@@ -207,7 +161,6 @@ img{max-width:100%;display:block}
   <a href="tel:080-2030-5617" class="nav-contact">Contact</a>
 </nav>
 
-<!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-img"></div>
   <div class="hero-content">
@@ -222,7 +175,7 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- ═══ OVERVIEW (cream) ═══ -->
+<!-- OVERVIEW -->
 <section id="overview" class="page" style="scroll-margin-top:56px">
   <div class="spacer-l"></div>
   <div class="sh r"><span class="sh-num">01</span><div class="sh-text"><span class="sh-en">Overview</span><span class="sh-jp">開催概要</span></div></div>
@@ -242,13 +195,12 @@ img{max-width:100%;display:block}
   <div class="spacer-l"></div>
 </section>
 
-<!-- ═══ PHOTO: フェアウェイ ═══ -->
 <div class="photo-break r">
   <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=1400&q=80&auto=format&fit=crop" alt="ゴルフコース フェアウェイ" loading="lazy" style="background:var(--green-dark);">
   <div class="photo-break-caption">Taiheiyo Club Ichihara — Evergreen fairways</div>
 </div>
 
-<!-- ═══ SCHEDULE (dark green) ═══ -->
+<!-- SCHEDULE -->
 <section id="schedule" class="section-green" style="scroll-margin-top:56px">
   <div class="page-inner">
     <div class="spacer-l"></div>
@@ -263,95 +215,135 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- ═══ QUOTE (darker green) ═══ -->
 <div class="quote-section r">
   <blockquote>各ホールが自然林とマウンドで完全にセパレートされ、<br>大きな池とバンカーが巧みにレイアウトされた<br>華麗にして優雅な18ホール。</blockquote>
   <cite>— Taiheiyo Club Ichihara Course</cite>
 </div>
 
-<!-- ═══ PHOTO: グリーン ═══ -->
 <div class="photo-break r">
   <img src="https://images.unsplash.com/photo-1592919505780-303950717480?w=1400&q=80&auto=format&fit=crop" alt="ゴルフコース グリーン" loading="lazy" style="background:var(--green-dark);">
   <div class="photo-break-caption">Strategic course — 6,842 yards of challenge</div>
 </div>
 
-<!-- ═══ RULES (cream) ═══ -->
+<!-- RULES -->
 <section id="rules" class="page" style="scroll-margin-top:56px">
   <div class="spacer-l"></div>
   <div class="sh r"><span class="sh-num">03</span><div class="sh-text"><span class="sh-en">Competition Rules</span><span class="sh-jp">競技要項</span></div></div>
-  <div class="rules-section r"><div class="rs-title">Format</div><p class="rs-item"><strong>個人戦</strong> 18ホール ストロークプレー（新ペリア方式）</p><p class="rs-item">ハンディキャップ算出：<strong>ダブルパーカット</strong> ／ 上限 36</p></div>
-  <div class="rules-section r"><div class="rs-title">Tee &amp; Ranking</div><p class="rs-item">使用ティー：<strong>REGULAR TEE（青）</strong>　女性はレッド</p><p class="rs-item">同ネットの場合 ① 女性上位　② ハンディキャップ上位</p></div>
-  <div class="rules-section r"><div class="rs-title">Special Rules</div><p class="rs-item"><strong>6インチプレース OK</strong></p><p class="rs-item"><strong>グリーン上 ワンクラブ OK</strong>（進行促進のため）</p><p class="rs-item">JGA競技規則および開催コースのローカルルールに準拠</p><p class="rs-item">旗の設置は最初の組、回収は最終組</p></div>
-  <div class="r"><div class="rs-title" style="margin-bottom:0.6rem">Nearest Pin &amp; Driving Contest</div><div class="holes-grid">
-    <div class="hole-cell"><div class="hole-cell-type">Nearest Pin — OUT</div><div class="hole-cell-val">6番ホール</div></div>
-    <div class="hole-cell"><div class="hole-cell-type">Nearest Pin — IN</div><div class="hole-cell-val">12番ホール</div></div>
-    <div class="hole-cell"><div class="hole-cell-type">Driving — OUT</div><div class="hole-cell-val">8番ホール</div></div>
-    <div class="hole-cell"><div class="hole-cell-type">Driving — IN</div><div class="hole-cell-val">15番ホール</div></div>
-  </div></div>
+
+  <div class="rules-section r">
+    <div class="rs-title">1. Individual — Format</div>
+    <p class="rs-item"><strong>個人戦</strong> 18ホール ストロークプレー（新ペリア方式）</p>
+    <p class="rs-item">ハンディキャップ算出：<strong>ダブルパーカット</strong> ／ 上限 36</p>
+  </div>
+
+  <div class="rules-section r">
+    <div class="rs-title">2. Team — Best 2 Ball</div>
+    <p class="rs-item"><strong>チーム対抗戦</strong>（ベスト2ボール形式）</p>
+    <p class="rs-item">各ホールにおいて、同組内の<strong>パーに対するスコアが良い上位2名</strong>の数値を採用し、その合計をチームスコアとする</p>
+    <p class="rs-item">バーディは<strong>「−1」</strong>として計算</p>
+    <div class="example-box">
+      <div class="example-box-title">Example — Par 4 の場合</div>
+      <div class="score-line">
+        <span class="score-tag">A: 4打 (±0)</span>
+        <span class="score-tag">B: 5打 (+1)</span>
+        <span class="score-tag">C: 6打 (+2)</span>
+        <span class="score-tag">D: 7打 (+3)</span>
+      </div>
+      <p class="result">→ 上位2名 A + B を採用：チームスコア = 0 + 1 = <strong>+1</strong></p>
+    </div>
+    <div class="note-box">
+      <p><strong>3名チームのハンディキャップ：</strong>3名でプレーする組は、不利を補うため18ホールの合計スコアから<strong>「−6」</strong>いたします。</p>
+    </div>
+  </div>
+
+  <div class="rules-section r">
+    <div class="rs-title">Tee &amp; Ranking</div>
+    <p class="rs-item">使用ティー：<strong>REGULAR TEE（青）</strong>　女性はレッド</p>
+    <p class="rs-item">同ネットの場合 ① 女性上位　② ハンディキャップ上位</p>
+  </div>
+  <div class="rules-section r">
+    <div class="rs-title">Special Rules</div>
+    <p class="rs-item"><strong>6インチプレース OK</strong></p>
+    <p class="rs-item"><strong>グリーン上 ワンクラブ OK</strong>（進行促進のため）</p>
+    <p class="rs-item">JGA競技規則および開催コースのローカルルールに準拠</p>
+    <p class="rs-item">旗の設置は最初の組、回収は最終組</p>
+  </div>
+  <div class="r">
+    <div class="rs-title" style="margin-bottom:0.6rem">Nearest Pin &amp; Driving Contest</div>
+    <div class="holes-grid">
+      <div class="hole-cell"><div class="hole-cell-type">Nearest Pin — OUT</div><div class="hole-cell-val">6番ホール</div></div>
+      <div class="hole-cell"><div class="hole-cell-type">Nearest Pin — IN</div><div class="hole-cell-val">12番ホール</div></div>
+      <div class="hole-cell"><div class="hole-cell-type">Driving — OUT</div><div class="hole-cell-val">8番ホール</div></div>
+      <div class="hole-cell"><div class="hole-cell-type">Driving — IN</div><div class="hole-cell-val">15番ホール</div></div>
+    </div>
+  </div>
   <div class="spacer-l"></div>
 </section>
 
-<!-- ═══ PAIRINGS (green header → cream body) ═══ -->
+<!-- PAIRINGS -->
 <section id="groups" style="scroll-margin-top:56px">
   <div class="pairings-intro">
     <div class="page-inner">
       <div class="sh sh-dark r"><span class="sh-num">04</span><div class="sh-text"><span class="sh-en">Pairings</span><span class="sh-jp">組合せ表</span></div></div>
-      <p class="r" style="font-family:var(--body);font-weight:300;font-size:0.75rem;color:var(--green-on-dim);line-height:1.6;margin-bottom:0;">敬称略。<span style="color:var(--green-on);font-weight:500">Leader</span> はエチケットリーダー（スコア提出）です。</p>
+      <p class="r" style="font-family:var(--body);font-weight:300;font-size:0.75rem;color:var(--green-on-dim);line-height:1.6;margin-bottom:0;">敬称略。<span style="color:var(--green-on);font-weight:500">Leader</span> はエチケットリーダー（スコア提出）です。各組がそのまま<span style="color:var(--green-on);font-weight:500">チーム対抗戦</span>のチームとなります。</p>
     </div>
   </div>
 
-  <div class="pairings-body" style="background:var(--bg);padding-top:2rem;padding-bottom:1rem;">
+  <div class="pairings-body">
     <div class="page-inner">
-      <div class="pairings-tabs r"><button class="p-tab active" data-tab="out" onclick="pTab('out')">OUT コース</button><button class="p-tab" data-tab="in" onclick="pTab('in')">IN コース</button></div>
 
-      <!-- OUT -->
-      <div id="p-out" class="p-panel active">
-        <div class="group-block r"><div class="gb-header"><span class="gb-time">9:32</span><span class="gb-label">OUT — 第1組</span></div><div class="gb-players">
-          <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">国見 健介</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">1999</span></div>
-          <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">宮城 翔平</span><span class="gb-player-org">有限責任パートナーズ綜合監査法人</span><span class="gb-player-year">2009</span></div>
-          <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">星野 浩平</span><span class="gb-player-org">(株)PrivateBANK</span><span class="gb-player-year">2016</span></div>
-          <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">山田 皓祐</span><span class="gb-player-org">Google合同会社</span><span class="gb-player-year">2018</span><span class="gb-player-leader">Leader</span></div>
-        </div></div>
-        <div class="group-block r"><div class="gb-header"><span class="gb-time">9:40</span><span class="gb-label">OUT — 第2組</span></div><div class="gb-players">
-          <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">福岡 裕太</span><span class="gb-player-org">(株)キューブ</span><span class="gb-player-year">2011</span></div>
-          <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">福井 大希</span><span class="gb-player-org">税理士法人DKKT</span><span class="gb-player-year">2017</span></div>
-          <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">森 祐也</span><span class="gb-player-org">EY新日本有限責任監査法人</span><span class="gb-player-year">2018</span></div>
-          <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">菅井 剛</span><span class="gb-player-org">CPAキャリアサポート(株)</span><span class="gb-player-year">2019</span><span class="gb-player-leader">Leader</span></div>
-        </div></div>
-        <div class="group-block r"><div class="gb-header"><span class="gb-time">9:48</span><span class="gb-label">OUT — 第3組</span></div><div class="gb-players">
-          <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">寺谷 暢泰</span><span class="gb-player-org">EY新日本有限責任監査法人</span><span class="gb-player-year">2015</span></div>
-          <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">梶谷 冬馬</span><span class="gb-player-org">EY税理士法人</span><span class="gb-player-year">2018</span></div>
-          <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">佐々木 淳平</span><span class="gb-player-org">ESネクスト有限責任監査法人</span><span class="gb-player-year">2022</span></div>
-          <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">福室 大地</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2019</span><span class="gb-player-leader">Leader</span></div>
-        </div></div>
-      </div>
+      <!-- ── OUT COURSE ── -->
+      <div class="course-divider r"><span class="course-divider-label">OUT Course</span><div class="course-divider-line"></div></div>
 
-      <!-- IN -->
-      <div id="p-in" class="p-panel">
-        <div class="group-block r"><div class="gb-header"><span class="gb-time">9:32</span><span class="gb-label">IN — 第1組</span></div><div class="gb-players">
-          <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">内野 孝信</span><span class="gb-player-org">内野(株)</span><span class="gb-player-year">2011</span></div>
-          <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">森 泰智</span><span class="gb-player-org">リサ・パートナーズ</span><span class="gb-player-year">2016</span></div>
-          <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">国見 健志</span><span class="gb-player-org">慶應義塾高校</span><span class="gb-player-year"></span></div>
-          <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">古作 祐真</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2015</span><span class="gb-player-leader">Leader</span></div>
-        </div></div>
-        <div class="group-block r"><div class="gb-header"><span class="gb-time">9:40</span><span class="gb-label">IN — 第2組</span></div><div class="gb-players">
-          <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">森 建人</span><span class="gb-player-org">PwCアドバイザリー合同会社</span><span class="gb-player-year">2016</span></div>
-          <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">東 陽洋</span><span class="gb-player-org">税理士法人Aoi Plus</span><span class="gb-player-year">2016</span></div>
-          <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">本田 瑠梨奈</span><span class="gb-player-org">(株)SoVa</span><span class="gb-player-year">2018</span></div>
-          <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">福田 雄介</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2018</span><span class="gb-player-leader">Leader</span></div>
-        </div></div>
-        <div class="group-block r"><div class="gb-header"><span class="gb-time">9:48</span><span class="gb-label">IN — 第3組</span></div><div class="gb-players">
-          <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">菅沼 彰</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2008</span></div>
-          <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">髙橋 直也</span><span class="gb-player-org">(株)ポケモン</span><span class="gb-player-year">2015</span></div>
-          <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">管 洸人</span><span class="gb-player-org">税理士法人DKKT</span><span class="gb-player-year">2017</span></div>
-          <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">川嶋 二暉</span><span class="gb-player-org">EY新日本有限責任監査法人</span><span class="gb-player-year">2018</span><span class="gb-player-leader">Leader</span></div>
-        </div></div>
-      </div>
+      <div class="group-block r"><div class="gb-header"><span class="gb-time">9:32</span><span class="gb-label">OUT — 第1組</span></div><div class="gb-players">
+        <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">国見 健介</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">1999</span></div>
+        <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">宮城 翔平</span><span class="gb-player-org">有限責任パートナーズ綜合監査法人</span><span class="gb-player-year">2009</span></div>
+        <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">星野 浩平</span><span class="gb-player-org">(株)PrivateBANK</span><span class="gb-player-year">2016</span></div>
+        <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">山田 皓祐</span><span class="gb-player-org">Google合同会社</span><span class="gb-player-year">2018</span><span class="gb-player-leader">Leader</span></div>
+      </div></div>
+
+      <div class="group-block r"><div class="gb-header"><span class="gb-time">9:40</span><span class="gb-label">OUT — 第2組</span><span class="gb-team-tag">3名 / −6 HC</span></div><div class="gb-players">
+        <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">福井 大希</span><span class="gb-player-org">税理士法人DKKT</span><span class="gb-player-year">2017</span></div>
+        <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">森 祐也</span><span class="gb-player-org">EY新日本有限責任監査法人</span><span class="gb-player-year">2018</span></div>
+        <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">菅井 剛</span><span class="gb-player-org">CPAキャリアサポート(株)</span><span class="gb-player-year">2019</span><span class="gb-player-leader">Leader</span></div>
+      </div></div>
+
+      <div class="group-block r"><div class="gb-header"><span class="gb-time">9:48</span><span class="gb-label">OUT — 第3組</span><span class="gb-team-tag">3名 / −6 HC</span></div><div class="gb-players">
+        <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">梶谷 冬馬</span><span class="gb-player-org">EY税理士法人</span><span class="gb-player-year">2018</span></div>
+        <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">佐々木 淳平</span><span class="gb-player-org">ESネクスト有限責任監査法人</span><span class="gb-player-year">2022</span></div>
+        <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">福室 大地</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2019</span><span class="gb-player-leader">Leader</span></div>
+      </div></div>
+
+      <div class="spacer-m"></div>
+
+      <!-- ── IN COURSE ── -->
+      <div class="course-divider r"><span class="course-divider-label">IN Course</span><div class="course-divider-line"></div></div>
+
+      <div class="group-block r"><div class="gb-header"><span class="gb-time">9:32</span><span class="gb-label">IN — 第1組</span><span class="gb-team-tag">3名 / −6 HC</span></div><div class="gb-players">
+        <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">森 泰智</span><span class="gb-player-org">リサ・パートナーズ</span><span class="gb-player-year">2016</span></div>
+        <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">国見 健志</span><span class="gb-player-org">慶應義塾高校</span><span class="gb-player-year"></span></div>
+        <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">古作 祐真</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2015</span><span class="gb-player-leader">Leader</span></div>
+      </div></div>
+
+      <div class="group-block r"><div class="gb-header"><span class="gb-time">9:40</span><span class="gb-label">IN — 第2組</span></div><div class="gb-players">
+        <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">森 建人</span><span class="gb-player-org">PwCアドバイザリー合同会社</span><span class="gb-player-year">2016</span></div>
+        <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">東 陽洋</span><span class="gb-player-org">税理士法人Aoi Plus</span><span class="gb-player-year">2016</span></div>
+        <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">本田 瑠梨奈</span><span class="gb-player-org">(株)SoVa</span><span class="gb-player-year">2018</span></div>
+        <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">福田 雄介</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2018</span><span class="gb-player-leader">Leader</span></div>
+      </div></div>
+
+      <div class="group-block r"><div class="gb-header"><span class="gb-time">9:48</span><span class="gb-label">IN — 第3組</span></div><div class="gb-players">
+        <div class="gb-player"><span class="gb-player-num">1</span><span class="gb-player-name">菅沼 彰</span><span class="gb-player-org">CPAエクセレントパートナーズ(株)</span><span class="gb-player-year">2008</span></div>
+        <div class="gb-player"><span class="gb-player-num">2</span><span class="gb-player-name">髙橋 直也</span><span class="gb-player-org">(株)ポケモン</span><span class="gb-player-year">2015</span></div>
+        <div class="gb-player"><span class="gb-player-num">3</span><span class="gb-player-name">福岡 裕太</span><span class="gb-player-org">(株)キューブ</span><span class="gb-player-year">2011</span></div>
+        <div class="gb-player"><span class="gb-player-num">4</span><span class="gb-player-name">川嶋 二暉</span><span class="gb-player-org">EY新日本有限責任監査法人</span><span class="gb-player-year">2018</span><span class="gb-player-leader">Leader</span></div>
+      </div></div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ CONTACT (dark green) ═══ -->
+<!-- CONTACT -->
 <section id="contact" class="section-contact" style="scroll-margin-top:56px">
   <div class="page-inner">
     <div class="spacer-l"></div>
@@ -374,7 +366,6 @@ img{max-width:100%;display:block}
 <footer class="footer"><p>CPA OBOG Golf Competition — Taiheiyo Club Ichihara — 2026</p></footer>
 
 <script>
-function pTab(t){document.querySelectorAll('.p-tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));document.querySelectorAll('.p-panel').forEach(p=>p.classList.toggle('active',p.id==='p-'+t));document.querySelectorAll('.p-panel.active .r:not(.v)').forEach(el=>obs.observe(el))}
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.r').forEach(el=>obs.observe(el));
 let lastY=0;const nav=document.getElementById('nav');
