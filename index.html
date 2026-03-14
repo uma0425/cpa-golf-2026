@@ -137,8 +137,7 @@ img{max-width:100%;display:block}
 .footer p{font-family:var(--display);font-style:italic;font-size:0.72rem;color:rgba(200,218,187,0.2);letter-spacing:0.06em}
 .spacer-s{height:2rem}.spacer-m{height:4rem}.spacer-l{height:6rem}
 .deco-line-dark{width:1px;height:60px;background:rgba(200,218,187,0.12);margin:0 auto}
-.r{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
-.r.v{opacity:1;transform:translateY(0)}
+/* reveal disabled for compatibility */
 @media(max-width:520px){
   .ov-row{grid-template-columns:1fr;gap:2px}
   .gb-player{flex-wrap:wrap;gap:0.3rem 0.8rem}
@@ -354,7 +353,7 @@ img{max-width:100%;display:block}
       <div class="cb-company">CPAエクセレントパートナーズ株式会社</div>
       <div class="cb-links">
         <a href="tel:080-2030-5617" class="cb-link"><span class="cb-link-label">Phone</span><span class="cb-link-value">080-2030-5617</span></a>
-        <a href="/cdn-cgi/l/email-protection#0b72266064786a607e4b687b6a26656e7f25617b" class="cb-link"><span class="cb-link-label">Email</span><span class="cb-link-value"><span class="__cf_email__" data-cfemail="ee97c385819d8f859bae8d9e8fc3808b9ac0849e">[email&#160;protected]</span></span></a>
+        <a href="mailto:y-kosaku@cpa-net.jp" class="cb-link"><span class="cb-link-label">Email</span><span class="cb-link-value">y-kosaku@cpa-net.jp</span></a>
       </div>
     </div>
     <div class="spacer-m"></div>
@@ -365,7 +364,13 @@ img{max-width:100%;display:block}
 
 <footer class="footer"><p>CPA OBOG Golf Competition — Taiheiyo Club Ichihara — 2026</p></footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('v');obs.unobserve(x.target)}})},{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
-let la
+<script>
+var lastY=0;var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  if(y>300&&y>lastY){nav.classList.add('hidden')}else{nav.classList.remove('hidden')}
+  lastY=y;
+},{passive:true});
+</script>
+</body>
+</html>
